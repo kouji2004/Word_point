@@ -55,3 +55,19 @@ new 演算子でクラスをインスタンス化(new クラス名())して変�
 
 
 
+↓コードでインスタンスを説明↓
+
+public class Task {	
+	public static void main(String[] arg) {
+
+		Object test = new Test();
+		test.method("田中");
+		System.out.println(test.name); // 結果：田中を表示
+
+	}
+}
+test の method に田中を入れて、test の name を呼んで「田中」を表示させるクラスです。
+
+このように new 演算子を用いてクラスのインスタンス生成を行い、
+
+そのインスタンスが保持するメソッドやフィールドを利用することができます
