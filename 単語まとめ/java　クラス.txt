@@ -136,3 +136,67 @@ class App {
 
 
 
+
+
+
+
+
+③メソッドを実行する
+オブジェクトが生成された後、メソッドを実行。
+
+
+オブジェクト名.メソッド名(引数);
+で、メソッドを実行できます。
+
+
+car.run(50);    	//50km走行する
+car.dispFuelGauge();    //燃料計を表示
+最後に、サンプルコードのメソッドを実行。
+
+
+class App {
+    public static void main(String[] args) {
+        //インスタンス化
+
+        Car car = new Car(70,10); 		//燃料70Lℓ、燃費10km/Lを設定
+        car.run(50);			//50km走行する
+        car.dispFuelGauge();    	//燃料計を表示
+    }
+}
+
+class Car{
+    //フィールド
+    private int fuel;           //燃料
+    private int consumption;    //燃費
+
+    //コンストラクタ（初期値を設定）
+    Car(int fuel,int consumption){
+        this.fuel = fuel;
+        this.consumption = consumption;
+    }
+
+    //メソッド
+    //走行
+    public void run(int mileage){
+	//燃料の残量を計算
+        this.fuel -= mileage / consumption;
+    }
+
+    //燃料計の表示
+    public void dispFuelGauge(){
+	System.out.println("残量：" + this.fuel + "L");
+    }
+}
+
+実行結果：残量：65L
+
+Carクラスに、燃料70L、燃費10km/Lの初期値を設定。
+
+
+50km走行したので、燃料消費量は5Lで、残量は70L – 5Lの65Lとなる。
+
+燃料計は残量を表示するので、65Lと表示。
+
+
+
+
