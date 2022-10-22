@@ -46,4 +46,74 @@ classのあとにクラス名を記述し、{ から } までのブロック内�
 
 
 
+①クラスの命名規則
+Javaのクラスには以下のような命名規則がある。
+
+
+・先頭文字は大文字、それ以降は小文字
+
+・先頭文字に数字は使用不可
+
+・単語区切りは大文字
+
+例）Car、RentalService
+
+
+
+
+②クラスの修飾子（そうしょくし）
+クラスの修飾子とは、クラスへのアクセスを制御するJavaの予約語。
+
+修飾子をまとめると
+public protected private　なし　が挙げられる。
+
+   アクセス修飾子	　　　                        説明
+  public	　　　　　　    制限はなく、どこからでもアクセス可能
+  protected	　　　                同一パッケージ内、またはサブクラスからのみアクセス可能
+       なし	　　　　　　　　    同一パッケージ内のみアクセス可能
+  private	　　　　　　　 同一クラス内でのみアクセス可能
+
+これらの違いを理解したうえで、クラスへのアクセス制限を設定する必要がある。
+
+
+
+
+
+
+4．クラスを使ってみよう
+
+クラスの使い方を解説。
+
+①クラスを作成する
+まず「Car」というクラスを作成。
+
+
+class Car{
+    //フィールド
+    private int fuel;           //燃料
+    private int consumption;    //燃費
+
+    //コンストラクタ（初期値を設定）
+    Car(int fuel,int consumption){
+        this.fuel = fuel;
+        this.consumption = consumption;
+    }
+
+    //メソッド
+    //運転
+    public void run(int mileage){
+        this.fuel -= mileage / consumption;
+    }
+
+    //燃料計の表示
+    public void dispFuelGauge(){
+        System.out.println("残量：" + this.fuel + "ℓ");
+System.out.println("残量：" + this.fuel + "L");
+
+    }
+}
+Carクラスには、フィールドとして「fuel」、「consumption」、メソッドとして「run」と「dispFuelGauge」、コンストラクタを定義している。
+
+
+Carクラスは燃料と燃費を保持する変数、「運転する」動作と「燃料計を表示する」動作を表すメソッド、変数を初期化するコンストラクタを記述している。
 
