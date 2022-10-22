@@ -108,3 +108,14 @@ test2.method("山本"); // test2 の method に山本を渡す
 
 System.out.println(test1.name); // 結果：田中を表示
 System.out.println(test2.name); // 結果：山本を表示
+
+※為になる話
+Test クラスで使用した String も実はクラスで、インスタンス生成を行なっています。
+
+String はよく使われるクラスとして特別扱いされており new 演算子を使わずにインスタンス生成されますが、
+
+省略せずに書くと「 String name = new String();」となります。
+
+
+
+
