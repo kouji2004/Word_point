@@ -49,13 +49,15 @@ new 演算子　(インスタンスの生成)
 
 
 
+
+
+
+
+
 new 演算子でクラスをインスタンス化(new クラス名())して変数へ代入(型 変数名 = )することで
 
 インスタンスを生成することができます。
 
-
-
-↓コードでインスタンスを説明↓
 
 public class Task {	
 	public static void main(String[] arg) {
@@ -71,3 +73,38 @@ test の method に田中を入れて、test の name を呼んで「田中」�
 このように new 演算子を用いてクラスのインスタンス生成を行い、
 
 そのインスタンスが保持するメソッドやフィールドを利用することができます
+
+
+
+
+
+
+
+
+
+
+
+生成されたインスタンスは変数名で呼び出すことができます。
+
+この際に同クラスを元に2つのインスタンスを生成した場合、
+
+それぞれ別のインスタンスとして判断されます。
+
+public class Task {	
+	public static void main(String[] arg) {
+		Object test1 = new Test();
+		Object test2 = new Test();
+	}
+}
+同じ Test クラスから生成されたインスタンス test1, test2 はそれぞれ独立しているため、
+
+それぞれの内容を別々に更新しても互いに影響は与えません。
+
+Object test1 = new Test();
+Object test2 = new Test();
+
+test1.method("田中"); // test1 の method に田中を渡す
+test2.method("山本"); // test2 の method に山本を渡す
+
+System.out.println(test1.name); // 結果：田中を表示
+System.out.println(test2.name); // 結果：山本を表示
