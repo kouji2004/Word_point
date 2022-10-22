@@ -119,3 +119,61 @@ String はよく使われるクラスとして特別扱いされており new �
 
 
 
+
+
+
+
+
+
+instanceof (単純なインスタンスを比較する場合)
+複雑なプログラムになってくると、
+
+「インスタンス化したクラスはプログラマーが意図したクラスか？」といったことを確かめたい場合が出てきます。
+
+このような場合、instanceof 演算子を使うことで意図したクラスかどうかを確認することができます。
+
+instanceof 演算子は boolean を返す真偽の演算子であり、if文と相性が良いです。
+
+サンプルコードでは if文を使った例を見てみましょう。
+
+
+
+◆ instanceof 演算子の利用例
+
+Object test = new Test();
+
+// 真偽値 true を返すため if文へ入って文字列を表示する
+if(test instanceof Test) {
+	System.out.println("testインスタンスはTestクラスに属します");
+}
+
+System.out.println(test instanceof Test); // 結果：true を表示
+インスタンス化した test は Test クラスに属しているため true を返します。
+
+インスタンスと比較できるクラスはそのインスタンスが属するクラスのみとなり、
+
+インスタンスが属するクラスと異なるクラスを比較しようとするとコンパイルエラーを起こします。
+
+
+
+ちなみに論理否定(エクスクラメーション( ! ))を使って false が返った場合に if文へ入るようにもできます。
+
+Object test = new Test();
+
+// true が返ってくるため if文には入らずスルー
+if(!(test instanceof Test)) {
+	System.out.println("testインスタンスはTestクラスに属しません");
+}
+
+System.out.println(test instanceof Test);
+
+
+インスタンスのクラスを true / false で比較することができました。
+
+
+
+
+
+
+
+
